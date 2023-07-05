@@ -9,7 +9,7 @@ async function loadMessages() {
     const messages = Papa.parse(csvData, { header: true, skipEmptyLines: true }).data;
 
     // Calculate the total weight of all messages
-    const totalWeight = messages.reduce((sum, message) => sum + parseInt(message.weight), 0);
+    const totalWeight = messages.reduce((sum, message) => sum + parseInt(message.weight || 0), 0);
 
     // Generate a random number between 0 and the total weight
     const randomNumber = Math.floor(Math.random() * totalWeight);
@@ -17,14 +17,19 @@ async function loadMessages() {
     // Select a message based on its weight
     let selectedMessage;
     for (const message of messages) {
-      if (randomNumber < parseInt(message.weight)) {
+      const weight = parseInt(message.weight || 0);
+      if (randomNumber < weight) {
         selectedMessage = message.message;
         break;
       }
-      randomNumber -= parseInt(message.weight);
+      randomNumber -= weight;
     }
 
-    document.getElementById("message").textContent = selectedMessage;
+    if (selectedMessage) {
+      document.getElementById("message").textContent = selectedMessage;
+    } else {
+      throw new Error("No message selected");
+    }
   } catch (error) {
     console.error('An error occurred:', error);
   }
