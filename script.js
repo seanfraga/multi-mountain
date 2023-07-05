@@ -30,5 +30,5 @@ async function loadMessages() {
   }
 }
 
-// Call the loadMessages function when the page is loaded
-window.onload = loadMessages;
+// Call the loadMessages function when the HTML content is fully loaded
+document.addEventListener('DOMContentLoaded', loadMessages);
