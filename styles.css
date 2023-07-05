@@ -1,7 +1,9 @@
 /* Styles for the header */
 .header {
-  background-color: #ff0000; /* Replace with your desired color */
-  color: #ffffff; /* Replace with the desired text color */
+  background-color: #40f75f;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
   padding: 10px;
 }
 
