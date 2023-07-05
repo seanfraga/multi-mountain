@@ -1,10 +1,10 @@
 /* Styles for the header */
 .header {
-  background-color: #40f75f;
-  font-size: 18px;
+  background-color: #38f56b;
   color: #ffffff;
-  text-align: center;
   padding: 10px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .header h1 {
