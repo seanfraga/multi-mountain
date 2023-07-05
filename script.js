@@ -24,7 +24,7 @@ async function loadMessages() {
       randomNumber -= parseInt(message.weight);
     }
 
-    document.getElementById("message").innerHTML = selectedMessage;
+    document.getElementById("message").textContent = selectedMessage;
   } catch (error) {
     console.error('An error occurred:', error);
   }
