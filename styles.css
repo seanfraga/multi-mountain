@@ -25,6 +25,10 @@ body {
   margin-top: 50px;
 }
 
+.centered {
+   text-align: center;
+}
+
 /* Styles for images */
   
     .image-container {
